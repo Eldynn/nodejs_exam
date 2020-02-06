@@ -5,7 +5,7 @@ const handlersCake = require('../handlers/cake');
 router.route('/')
   .post(handlersCake.createCake)
   .get((req, res) => {
-    if (req.query.isGlutenFree === true) {
+    if (req.query.isGlutenFree === 'true') {
       handlersCake.getAllCakeGlutenFree(req, res);
     } else if (req.query.baker) {
       handlersCake.getAllCakeByBaker(req, res);
